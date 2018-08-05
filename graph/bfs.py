@@ -40,5 +40,4 @@ g.addEdge(5,4,8)
 g.addEdge(5,2,1)
 
 start = g.getVertex(2)
-print (start.getId())
 bfs(g,start)  
