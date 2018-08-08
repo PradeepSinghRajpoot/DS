@@ -2,17 +2,8 @@ from graph import Graph
 
 #time = 0
 
-def dfs(g, start):
+def dfs(startVertex):
 
-    start.setPred(None)
-    start.setDistance(0)
-
-    for nbr in start.getConnections():
-        if(nbr.getColor() == 'white'):
-            dfsvisit(nbr)
-
-
-def dfsvisit(startVertex):
     startVertex.setColor('gray')
     #time += 1
 
@@ -21,9 +12,9 @@ def dfsvisit(startVertex):
     for nextVertex in startVertex.getConnections():
         if (nextVertex.getColor() == 'white'):
             nextVertex.setPred(startVertex)
-            dfsvisit(nextVertex)
+            dfs(nextVertex)
         
-    startVertex.setColor('black')
+        startVertex.setColor('black')
     #time += 1
     #startVertex.setFinishTime(time)
     print(startVertex.getId())
@@ -45,5 +36,5 @@ g.addEdge(4,0,1)
 g.addEdge(5,4,8)
 g.addEdge(5,2,1)
 
-start = g.getVertex(2)
-dfs(g,start)  
+start = g.getVertex(0)
+dfs(start)  

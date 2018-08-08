@@ -39,5 +39,5 @@ g.addEdge(4,0,1)
 g.addEdge(5,4,8)
 g.addEdge(5,2,1)
 
-start = g.getVertex(2)
+start = g.getVertex(0)
 bfs(g,start)  
