@@ -9,7 +9,7 @@ def generateKLengthStrings(chars, prefix, k):
 
     for c in chars:
         newprefix = prefix + c;
-
+        print('newprefix', newprefix, str( k-1))
         x = generateKLengthStrings(chars, newprefix,  k-1)
         result = result + x
 
@@ -18,6 +18,6 @@ def generateKLengthStrings(chars, prefix, k):
 
 chars = ['a','b','c','d','e']
 
-parr = generateKLengthStrings(chars, '', 2 )
+parr = generateKLengthStrings(chars, '', 3 )
 
 print('parr', parr)
